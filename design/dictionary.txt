@@ -5,14 +5,21 @@ Materials here can be referenced during production to ensure code aligns with go
 
 "Screen_Main.png" - Design of the main screen that a user sees upon opening the application. Consider it a 'main menu'.
 
-"Screen_Links.png" - Design of a submenu screen that lists each 'link' that a user has. A 'link' is a friend or family member that the user wants to keep a record of interactions with. Links can be added or deleted from this screen.
+"Screen_Links.png" - Design of a submenu screen that lists each 'link' that a user has. A 'link' is a friend or family member 
+that the user wants to keep a record of interactions with. Links can be added or deleted from this screen.
 
-"Screen_LinkPage.png" - Design of a screen that lists the details for a specific link chosen from the previous link submenu screen. Contact information and important pictures can be found here. The chosen link can be edited here.
+"Screen_LinkPage.png" - Design of a screen that lists the details for a specific link chosen from the previous link 
+submenu screen. Contact information and important pictures can be found here. The chosen link can be edited here.
 
-"Screen_Calendar.png" - Design of a screen that displays a calendar of events that are each associated with a specific link. Events can be added, edited, or deleted from this screen.
+"Screen_Calendar.png" - Design of a screen that displays a calendar of events that are each associated with a specific link. 
+Events can be added, edited, or deleted from this screen.
 
-"Screen_GiftSuggestions.png" - Design of a submenu screen that looks a lot like the simple links submenu. All links are displayed again with a number next to them that tells the user how many active gifts have been recorded for that link. 
+"Screen_GiftSuggestions.png" - Design of a submenu screen that looks a lot like the simple links submenu. 
+All links are displayed again with a number next to them that tells the user how many active gifts have been recorded for that link. 
 
-"Screen_GiftSuggestionsList.png" - Design of a submenu screen that displays gifts recorded for a specific link chosen from the previous gift suggestions submenu screen. Gifts can be added or deleted from this screen. Gifts that have already been bought are grayed out.
+"Screen_GiftSuggestionsList.png" - Design of a submenu screen that displays gifts recorded for a specific link chosen from the 
+previous gift suggestions submenu screen. Gifts can be added or deleted from this screen. 
+Gifts that have already been bought are grayed out.
 
-"Screen_GiftSuggestionsListGift.png" - Design of a screen that lists the details for a specific gift chosen from the previous gift suggestions list submenu screen. The chosen gift can be edited here.
+"Screen_GiftSuggestionsListGift.png" - Design of a screen that lists the details for a specific gift chosen 
+from the previous gift suggestions list submenu screen. The chosen gift can be edited here.
