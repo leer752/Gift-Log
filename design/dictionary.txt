@@ -23,3 +23,6 @@ Gifts that have already been bought are grayed out.
 
 "Screen_GiftSuggestionsListGift.png" - Design of a screen that lists the details for a specific gift chosen 
 from the previous gift suggestions list submenu screen. The chosen gift can be edited here.
+
+"Screen_Interactions.txt" - Textual guide that lists what should be happening on each screen. Gives an idea for the steps 
+necessary to get each screen coded correctly.
