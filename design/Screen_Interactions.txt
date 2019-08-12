@@ -1,0 +1,205 @@
+"Main"
+
+Display a gray background (gray - hex #333333).
+Display title text saying "PaperPeople" (font IBM Plex Sans; white).
+Insert logo below title text.
+Display three buttons saying "Links", "Calendar", and "Gift Suggestions" vertically (font IBM Plex Sans - Light Italic; white) (Rounded buttons; No fill; white outline).
+Make buttons interactable: "Links" transitions to link page, "Calendar" transitions to calendar page, & "Gift Suggestions" transitions to gift suggestion page.
+**If time allows, have a fading transition between pages.
+
+---
+
+"Main" > "Links"
+
+Display a white background.
+Display a gray box at the top.
+Display title text in the gray box saying "Links" (white).
+Display a pencil/edit logo to the right of the title text.
+Display a back arrow logo to the left of the title text.
+Import a list of people (contact book) that have been recorded in the application.
+Sort the list alphabetically in order of Nickname > Last Name (if Nickname not present) > First Name (If Nickname & Last Name not present).
+Add dividers to the list based on the sorted letter (i.e. "K" names are under a K label). 
+Bold either the Nickname, First Name, or Last Name based on what is being used to sort the entry. (gray text)
+Add a search bar to the top of the screen below the title text to allow a user to search through the list more effectively. 
+Searching applies a filter.
+Make each name clickable; name should re-direct to its appropriate contact page.
+Make list scrollable; user should be able to use touch to scroll down the list. 
+Everything in the top gray box & search bar should be locked. They shouldn't move during scrolling. 
+Back arrow re-directs you to main screen again.
+Edit button should re-direct to the same type of screen but with editing functions enabled:
+- An "X" appears next to each name. When clicked, a dialog box appears that asks if the user really wants to delete that contact. If "Yes" is chosen, the contact is removed from the list & screen updated.
+- The pencil/edit logo is replaced by an addition symbol.
+- The back arrow now returns you to the contact book again but without editing functions. 
+- Pressing the addition symbol creates a new entry in the contact book using an empty template for a contact and takes you to its editing page. 
+
+---
+
+"Main" > "Links" > "Link Page"
+
+Display a white background.
+Display a gray box at the top.
+Display title text in the gray box saying the chosen contact name (white).
+Display a pencil/edit logo to the right of the title text.
+Display a back arrow logo to the left of the title text.
+Import details about the selected contact that was chosen from the Links screen. 
+Round the image selected as the main image and put it at the top of the screen below the gray box.
+Display category titles vertically on the left of the screen - "First", "Last", "Alias", "E-mail", "Cell", "Usertags", "Birthday", "Gallery", "Notes" (gray; italic).
+Display a vertical dividing line to the right of these category titles.
+To the right of the line, import & display the user-inputted information aligned next to its appropriate category. 
+If a category has no information listed, display the default value "empty". 
+The information for the "Notes" category is enclosed by quotations (unless empty).
+Make page scrollable, if needed.
+**If time allows, make e-mail and phone number clickable & re-direct externally to the appropriate application (i.e. Mail or Contact apps). 
+Display only a few pictures in the "Gallery" category.
+Add a "see more" link with the Gallery category that brings the user to a page where they can see the full list of associated pictures & add/delete if desired.
+Edit button should re-direct to the same type of screen but with editing functions enabled:
+- The title text is replaced with "Make Changes".
+- The pencil/edit logo is replaced by a checkmark symbol.
+- The back arrow now returns user to the contact page and reverts any changes made. 
+- The checkmark saves all changes made and returns user to the updated contact page.
+- The text on the right of the dividing line can now be clicked on and edited.
+- The main image can be clicked on and changed. 
+- The gallery cannot be changed from here.
+New person template (when added from the previous page):
+- Has "empty" in all categories.
+- The title text is replaced with "New Link". 
+- The checkmark saves the new entry and returns user to the contact page.
+- The back arrow returns user to the contact page and deletes the template entry regardless of changes. 
+- First is mandatory.
+
+---
+
+"Main" > "Calendar"
+
+Display a white background.
+Display a gray box at the top.
+Display title text in the gray box saying "Calendar" (white).
+Display a back arrow logo to the left of the title text.
+Import system time & use it to determine the current month and year.
+Display current month and year below the top gray box.
+Put an arrow to the left and right of the month and year.
+Display a 7 x 5 grid. 
+Import the grid of events associated with that month and year.
+Put the number of the days of the month on each grid square (appropriate days for appropriate month/year).
+**Might need to import external list that knows the specific day that each month started/ended on for each year.
+Determine the current day and shade that specific grid cell.
+Shade the numbers of days that came before/after the month.
+For each day that contains event information, put a flag in that grid square. 
+If a square with no recorded event is tapped, put a circle in that square and display an addition symbol below the calendar.
+Pressing that addition symbol will create a blank template entry for an event. 
+If the flag is tapped in a square with an event, display the event details below the calendar and shade that flag. 
+A small title will be below the calendar saying "Event Details".
+Display a pencil/edit logo to the right of the "Event Details" text. 
+Event details will include 6 categories, listed on the left and vertically: "Label", "Date", "Time", "Link", "Tags", & "Notes".
+Display a vertical dividing line to the right of the category labels.
+Import & display associated information to the right of the dividing line.
+The text for the "Link" category is a link; it re-directs the user to that link's contact page. 
+The information for the "Tags" category will be a list.
+**If time allows, the "Tags" list should be displayed like an actual tag. (Think sales tag shape; inverted white text & gray fill). 
+If a category has no information listed, display the default value "empty". 
+The information for the "Notes" category is enclosed by quotations (unless empty).
+Event details should be scrollable (everything above event details should be locked).
+Edit button should re-direct to the same type of screen (but without the grid and moving the event details categories further up) with editing functions enabled:
+- The title text is replaced with "Make Changes".
+- The pencil/edit logo is replaced by a checkmark symbol.
+- The back arrow now returns user to the calendar page and reverts any changes made. 
+- The checkmark saves all changes made and returns user to the updated calendar page.
+- The text on the right of the dividing line can now be clicked on and edited.
+- The "Link" category is a drop-down selection that lists recorded links (possible searchable?). 
+- The "Tags" category has an addition symbol on it that has you select from a pre-determined list (i.e. "Birthday", "Shower", "Career", etc.) or create a custom tag. 
+- You can also delete a tag from the edit page.
+New event template:
+- Has "empty" in all categories.
+- The title text is replaced with "New Event". 
+- The checkmark saves the new entry and returns user to the calendar page.
+- The back arrow returns user to the calendar page and deletes the template entry regardless of changes. 
+- The "Link" category is a drop-down selection that lists recorded links (possible searchable?). 
+- The "Tags" category has an addition symbol on it that has you select from a pre-determined list (i.e. "Birthday", "Shower", "Career", etc.) or create a custom tag. 
+- You can delete a tag as well. 
+- Label, Date, & Time are mandatory. 
+
+---
+
+"Main" > "Gift Suggestions" 
+
+Display a white background.
+Display a gray box at the top.
+Display title text in the gray box saying "Gift Suggestions" (white).
+Display a back arrow logo to the left of the title text.
+Import a list of people (contact book) that have been recorded in the application.
+Sort the list alphabetically in order of Nickname > Last Name (if Nickname not present) > First Name (If Nickname & Last Name not present).
+Add dividers to the list based on the sorted letter (i.e. "K" names are under a K label). 
+Bold either the Nickname, First Name, or Last Name based on what is being used to sort the entry. (gray text)
+Add a search bar to the top of the screen below the title text to allow a user to search through the list more effectively. 
+Searching applies a filter.
+Make each name clickable; name should re-direct to its appropriate gift list page.
+Make list scrollable; user should be able to use touch to scroll down the list. 
+Everything in the top gray box & search bar should be locked. They shouldn't move during scrolling. 
+Back arrow re-directs you to main screen again.
+Each name has a number next to it that is a count of how many active gifts have been recorded for that contact.
+Editing is not allowed at this screen.
+
+---
+
+"Main" > "Gift Suggestions" > "List"
+
+Display a white background.
+Display a gray box at the top.
+Display title text in the gray box saying the chosen contact name (white).
+Display a pencil/edit logo to the right of the title text. 
+Display a back arrow logo to the left of the title text.
+Display subtitle text below the gray box saying "Gifts" (gray; underlined?) 
+Import a list of gifts associated with the chosen contact name.
+Sort the list by descending priority. 
+**If time allows, add a feature that can change how the list is sorted (i.e. alphabetically, by location, by descending/ascending price). 
+Categories displayed will be: "Item Name", "City, State", "Price", and "Priority". 
+"City, State" will be italicized and below Item Name.
+"Price" is right-aligned.
+"Priority" is shown through a colored circle; (Red = high, Medium = yellow, Low = green, Gifted = gray). 
+Gifts with the "Gifted" priority status are shaded. 
+Make each gift clickable; gift should re-direct to its appropriate gift page.
+Make list scrollable; user should be able to use touch to scroll down the list. 
+Everything in the top gray box should be locked. It shouldn't move during scrolling. 
+Back arrow re-directs you to gift suggestions list screen. 
+Edit button should re-direct to the same type of screen with editing functions enabled:
+- An "X" appears next to each gift. When clicked, a dialog box appears that asks if the user really wants to delete that gift. If "Yes" is chosen, the gift is removed from the list & screen updated.
+- The pencil/edit logo is replaced by an addition symbol.
+- The back arrow now returns you to the gift list again but without editing functions. 
+- Pressing the addition symbol creates a new entry in the gift list using an empty template takes you to its editing page. 
+
+---
+
+"Main" > "Gift Suggestions" > "List" > "Gift"
+
+Display a white background.
+Display a gray box at the top.
+Display title text in the gray box saying the chosen gift (white).
+If gift name is too long, replace the excess text with "...". 
+Display a pencil/edit logo to the right of the title text.
+Display a back arrow logo to the left of the title text.
+Import details about the selected gift. 
+Display the main image at the top of the screen below the gray box.
+Display category titles vertically on the left of the screen - "Name", "Store", "Address", "City, State", "Price", "Date Seen", "Priority", "Item Code", & "Notes" (gray; italic).
+**Possibly replace City, State with something more general like Location -- idea is that this can also have the value "Website" for online gifts
+Display a vertical dividing line to the right of these category titles.
+To the right of the line, import & display the user-inputted information aligned next to its appropriate category. 
+If a category has no information listed, display the default value "empty". 
+The information for the "Notes" category is enclosed by quotations (unless empty).
+Make page scrollable, if needed.
+**If time allows, make address clickable & re-direct externally to the appropriate application (i.e. Safari or Map app). 
+Edit button should re-direct to the same type of screen but with editing functions enabled:
+- The title text is replaced with "Make Changes".
+- The pencil/edit logo is replaced by a checkmark symbol.
+- The back arrow now returns user to the gift page and reverts any changes made. 
+- The checkmark saves all changes made and returns user to the updated gift page.
+- The text on the right of the dividing line can now be clicked on and edited.
+- The main image can be clicked on and changed. 
+New gift template (when added from the previous page):
+- Has "empty" in all categories.
+- The title text is replaced with "New Gift". 
+- The checkmark saves the new entry and returns user to the gift page.
+- The back arrow returns user to the gift page and deletes the template entry regardless of changes. 
+- Name, Price, & City, State are mandatory.
+
+
+ 
