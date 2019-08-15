@@ -1,0 +1,19 @@
+Old design folder holds outdated images and text files written to help set goals for the final product.
+Materials here were for the old prototype and will no longer be shown in the final product.
+
+---
+
+"Screen_Main.png" - Design of the main screen that a user sees upon opening the application. Consider it a 'main menu'.
+
+"Screen_Links.png" - Design of a submenu screen that lists each 'link' that a user has. A 'link' is a friend or family member 
+that the user wants to keep a record of interactions with. Links can be added or deleted from this screen.
+
+"Screen_LinkPage.png" - Design of a screen that lists the details for a specific link chosen from the previous link 
+submenu screen. Contact information and important pictures can be found here. The chosen link can be edited here.
+
+"Screen_Calendar.png" - Design of a screen that displays a calendar of events that are each associated with a specific link. 
+Events can be added, edited, or deleted from this screen.
+
+"Screen_Interactions.txt" - Textual guide that lists what should be happening on each screen. Gives an idea for the steps 
+necessary to get each screen coded correctly.
+
