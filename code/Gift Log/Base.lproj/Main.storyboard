@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Gift_Log" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="DS9-j0-vw4">
+                                <rect key="frame" x="20" y="314" width="88" height="373"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3OA-kw-Hsu">
+                                        <rect key="frame" x="0.0" y="0.0" width="88" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="BhU-J7-eu0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Store" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZc-q9-sMB">
+                                        <rect key="frame" x="0.0" y="49" width="88" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="YuZ-kK-Ffi"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7MP-Dv-AQW">
+                                        <rect key="frame" x="0.0" y="98" width="88" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="isw-o0-qgy"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City, State" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZf-OW-ay0">
+                                        <rect key="frame" x="0.0" y="147" width="88" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="P5b-DH-VIO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URL" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ITa-RL-Oh0">
+                                        <rect key="frame" x="0.0" y="196" width="88" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Rnr-dP-VEO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0L5-wO-P8b">
+                                        <rect key="frame" x="0.0" y="245" width="88" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="SbZ-R6-mAG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Seen" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pST-b9-2YL">
+                                        <rect key="frame" x="0.0" y="294" width="88" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="UhA-Gm-UC1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Code" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVM-MI-XHR">
+                                        <rect key="frame" x="0.0" y="343" width="88" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="3OA-kw-Hsu" firstAttribute="leading" secondItem="TZc-q9-sMB" secondAttribute="leading" id="BW5-vB-hej"/>
+                                    <constraint firstItem="7MP-Dv-AQW" firstAttribute="leading" secondItem="KZf-OW-ay0" secondAttribute="leading" id="IN7-cw-Dw8"/>
+                                    <constraint firstItem="KZf-OW-ay0" firstAttribute="leading" secondItem="ITa-RL-Oh0" secondAttribute="leading" id="JOH-rE-vem"/>
+                                    <constraint firstItem="ITa-RL-Oh0" firstAttribute="leading" secondItem="0L5-wO-P8b" secondAttribute="leading" id="WfB-ah-boO"/>
+                                    <constraint firstItem="TZc-q9-sMB" firstAttribute="leading" secondItem="7MP-Dv-AQW" secondAttribute="leading" id="XZf-9z-M9t"/>
+                                    <constraint firstItem="3OA-kw-Hsu" firstAttribute="leading" secondItem="DS9-j0-vw4" secondAttribute="leading" id="XnS-3X-PKP"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="gBX-rQ-ojM">
+                                <rect key="frame" x="116" y="314" width="278" height="373"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter item name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F4Q-MT-hkF">
+                                        <rect key="frame" x="0.0" y="0.0" width="278" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter store name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lyb-kX-WZf">
+                                        <rect key="frame" x="0.0" y="49" width="278" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter physical address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LYA-Gb-ifx">
+                                        <rect key="frame" x="0.0" y="98" width="278" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter city/state of store" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w8Z-bZ-ftW">
+                                        <rect key="frame" x="0.0" y="147" width="278" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NGL-ju-vW2">
+                                        <rect key="frame" x="0.0" y="196" width="278" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter price of item" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UMH-my-Sfd">
+                                        <rect key="frame" x="0.0" y="245" width="278" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter date item was seen" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AYe-I7-AzQ">
+                                        <rect key="frame" x="0.0" y="294" width="278" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter item code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UOs-0R-Z68">
+                                        <rect key="frame" x="0.0" y="343" width="278" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="194" placeholderIntrinsicHeight="194" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="0Gh-Yk-MuG">
+                                <rect key="frame" x="110" y="83" width="194" height="194"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0Gh-Yk-MuG" secondAttribute="height" multiplier="1:1" id="dBb-bf-m2z"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Ebp-BE-tmy" appends="YES" id="Rye-5v-v1u"/>
+                                </connections>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="7TY-ED-kOX" customClass="PriorityControl" customModule="Gift_Log" customModuleProvider="target">
+                                <rect key="frame" x="96" y="761" width="223" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="exclamationPointCount">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="exclamationPointSize">
+                                        <size key="value" width="44" height="44"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Priority" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyY-yh-GfK">
+                                <rect key="frame" x="162" y="723" width="90" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0Gh-Yk-MuG" secondAttribute="trailing" constant="110" id="D2k-FZ-3cl"/>
+                            <constraint firstItem="gBX-rQ-ojM" firstAttribute="leading" secondItem="DS9-j0-vw4" secondAttribute="trailing" constant="8" symbolic="YES" id="G9K-YY-guw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iyY-yh-GfK" secondAttribute="trailing" constant="162" id="NCs-nT-d56"/>
+                            <constraint firstItem="DS9-j0-vw4" firstAttribute="bottom" secondItem="gBX-rQ-ojM" secondAttribute="bottom" id="O7U-8R-apE"/>
+                            <constraint firstItem="gBX-rQ-ojM" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="RWI-vK-Czz"/>
+                            <constraint firstItem="DS9-j0-vw4" firstAttribute="top" secondItem="gBX-rQ-ojM" secondAttribute="top" id="SIV-M9-kGg"/>
+                            <constraint firstItem="0Gh-Yk-MuG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="39" id="UAf-Hc-uZZ"/>
+                            <constraint firstItem="iyY-yh-GfK" firstAttribute="top" secondItem="gBX-rQ-ojM" secondAttribute="bottom" constant="36" id="clG-BL-2DH"/>
+                            <constraint firstItem="DS9-j0-vw4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gg4-d7-WJf"/>
+                            <constraint firstItem="iyY-yh-GfK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="162" id="naL-03-CrS"/>
+                            <constraint firstItem="DS9-j0-vw4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="270" id="oqF-uo-5dO"/>
+                            <constraint firstItem="0Gh-Yk-MuG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="110" id="vKU-Li-2TJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="addressField" destination="LYA-Gb-ifx" id="jav-nv-wn4"/>
+                        <outlet property="addressLabel" destination="7MP-Dv-AQW" id="CDM-tv-vaO"/>
+                        <outlet property="cityStateField" destination="w8Z-bZ-ftW" id="WZD-20-vum"/>
+                        <outlet property="cityStateLabel" destination="KZf-OW-ay0" id="bMz-qS-iP1"/>
+                        <outlet property="dateField" destination="AYe-I7-AzQ" id="oav-MR-2rW"/>
+                        <outlet property="dateLabel" destination="pST-b9-2YL" id="mRX-Qj-rKZ"/>
+                        <outlet property="imageView" destination="0Gh-Yk-MuG" id="g1E-4Q-q18"/>
+                        <outlet property="itemCodeField" destination="UOs-0R-Z68" id="3tN-b1-1qg"/>
+                        <outlet property="itemCodeLabel" destination="eVM-MI-XHR" id="O8z-Cf-v7r"/>
+                        <outlet property="nameField" destination="F4Q-MT-hkF" id="mQT-8N-zjH"/>
+                        <outlet property="nameLabel" destination="3OA-kw-Hsu" id="Ygb-7C-0Kk"/>
+                        <outlet property="priceField" destination="UMH-my-Sfd" id="3ZR-YN-Ynr"/>
+                        <outlet property="priceLabel" destination="0L5-wO-P8b" id="eyT-bJ-Z1Y"/>
+                        <outlet property="priorityLabel" destination="iyY-yh-GfK" id="6SR-29-dDl"/>
+                        <outlet property="storeField" destination="lyb-kX-WZf" id="Qxa-y3-zs9"/>
+                        <outlet property="storeLabel" destination="TZc-q9-sMB" id="TZf-rx-7ji"/>
+                        <outlet property="urlField" destination="NGL-ju-vW2" id="bVz-mj-Eyf"/>
+                        <outlet property="urlLabel" destination="ITa-RL-Oh0" id="Mem-9q-GTO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Ebp-BE-tmy">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="Y5r-JN-CRM"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="40.579710144927539" y="25.446428571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="defaultImage" width="110" height="100"/>
+    </resources>
+</document>
