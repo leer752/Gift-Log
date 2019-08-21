@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		132EE4842305CBE200269B06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132EE4832305CBE200269B06 /* AppDelegate.swift */; };
-		132EE4862305CBE200269B06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132EE4852305CBE200269B06 /* ViewController.swift */; };
+		132EE4862305CBE200269B06 /* GiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132EE4852305CBE200269B06 /* GiftViewController.swift */; };
 		132EE4892305CBE200269B06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 132EE4872305CBE200269B06 /* Main.storyboard */; };
 		132EE48B2305CBE700269B06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 132EE48A2305CBE700269B06 /* Assets.xcassets */; };
 		132EE48E2305CBE700269B06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 132EE48C2305CBE700269B06 /* LaunchScreen.storyboard */; };
 		132EE4992305CBE800269B06 /* Gift_LogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132EE4982305CBE800269B06 /* Gift_LogTests.swift */; };
 		132EE4A42305E47600269B06 /* PriorityControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132EE4A32305E47600269B06 /* PriorityControl.swift */; };
+		1377B5F6230B413F00622F83 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1377B5F5230B413F00622F83 /* extensions.swift */; };
 		137B58E8230726CC00E9A785 /* Gift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137B58E7230726CC00E9A785 /* Gift.swift */; };
+		137B58EA2307400E00E9A785 /* GiftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137B58E92307400E00E9A785 /* GiftTableViewCell.swift */; };
+		137B58EC230745FE00E9A785 /* GiftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137B58EB230745FE00E9A785 /* GiftTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +33,7 @@
 /* Begin PBXFileReference section */
 		132EE4802305CBE200269B06 /* Gift Log.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gift Log.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		132EE4832305CBE200269B06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		132EE4852305CBE200269B06 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		132EE4852305CBE200269B06 /* GiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftViewController.swift; sourceTree = "<group>"; };
 		132EE4882305CBE200269B06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		132EE48A2305CBE700269B06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		132EE48D2305CBE700269B06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -39,7 +42,10 @@
 		132EE4982305CBE800269B06 /* Gift_LogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gift_LogTests.swift; sourceTree = "<group>"; };
 		132EE49A2305CBE800269B06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		132EE4A32305E47600269B06 /* PriorityControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityControl.swift; sourceTree = "<group>"; };
+		1377B5F5230B413F00622F83 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		137B58E7230726CC00E9A785 /* Gift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gift.swift; sourceTree = "<group>"; };
+		137B58E92307400E00E9A785 /* GiftTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftTableViewCell.swift; sourceTree = "<group>"; };
+		137B58EB230745FE00E9A785 /* GiftTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,10 +88,13 @@
 			isa = PBXGroup;
 			children = (
 				132EE4832305CBE200269B06 /* AppDelegate.swift */,
-				132EE4852305CBE200269B06 /* ViewController.swift */,
-				132EE4872305CBE200269B06 /* Main.storyboard */,
-				137B58E7230726CC00E9A785 /* Gift.swift */,
+				1377B5F5230B413F00622F83 /* extensions.swift */,
+				132EE4852305CBE200269B06 /* GiftViewController.swift */,
+				137B58E92307400E00E9A785 /* GiftTableViewCell.swift */,
 				132EE4A32305E47600269B06 /* PriorityControl.swift */,
+				137B58E7230726CC00E9A785 /* Gift.swift */,
+				137B58EB230745FE00E9A785 /* GiftTableViewController.swift */,
+				132EE4872305CBE200269B06 /* Main.storyboard */,
 				132EE48A2305CBE700269B06 /* Assets.xcassets */,
 				132EE48C2305CBE700269B06 /* LaunchScreen.storyboard */,
 				132EE48F2305CBE700269B06 /* Info.plist */,
@@ -203,8 +212,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				132EE4862305CBE200269B06 /* ViewController.swift in Sources */,
+				132EE4862305CBE200269B06 /* GiftViewController.swift in Sources */,
 				132EE4842305CBE200269B06 /* AppDelegate.swift in Sources */,
+				137B58EA2307400E00E9A785 /* GiftTableViewCell.swift in Sources */,
+				1377B5F6230B413F00622F83 /* extensions.swift in Sources */,
+				137B58EC230745FE00E9A785 /* GiftTableViewController.swift in Sources */,
 				132EE4A42305E47600269B06 /* PriorityControl.swift in Sources */,
 				137B58E8230726CC00E9A785 /* Gift.swift in Sources */,
 			);

@@ -31,7 +31,8 @@ class Gift_LogTests: XCTestCase {
         let negativePriceGift = Gift.init(photo: nil, name: "Free", store: "Test", address: nil, cityState: nil, url: nil, price: -60, date: nil, itemCode: nil, priority: 0)
         XCTAssertNil(negativePriceGift)
         
-        let excessPriorityGift = Gift.init(photo: nil, name: "Max", store: "Test", address: nil, cityState: nil, url: nil, price: 40.00, date: nil, itemCode: nil, priority: 6)
+        let excessPriorityGift = Gift.init(photo: nil, name: "Max", store: "Test", address: nil, cityState: nil, url: nil, price: 40.00, date: nil, itemCode: nil, priority: 4)
+        XCTAssertNil(excessPriorityGift)
     }
     
 }
