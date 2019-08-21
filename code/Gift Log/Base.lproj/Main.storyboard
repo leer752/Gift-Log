@@ -21,34 +21,33 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GiftTableViewCell" rowHeight="90" id="UDR-aD-9zQ" customClass="GiftTableViewCell" customModule="Gift_Log" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UDR-aD-9zQ" id="Cdj-Dr-L8l" customClass="GiftTableViewCell" customModule="Gift_Log" customModuleProvider="target">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UDR-aD-9zQ" id="Cdj-Dr-L8l">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="kGo-D7-1hh">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="kGo-D7-1hh">
                                             <rect key="frame" x="0.0" y="0.0" width="90" height="89.5"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="90" id="1XU-Gp-Fke"/>
-                                                <constraint firstAttribute="height" constant="89.5" id="IMk-Im-rR4"/>
+                                                <constraint firstAttribute="width" constant="90" id="TcT-az-p52"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gift Name Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hy6-qf-HOh">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gift Name Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hy6-qf-HOh">
                                             <rect key="frame" x="98" y="11" width="316" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="dN0-0N-ehx"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aoQ-Lr-7k9">
-                                            <rect key="frame" x="260" y="40" width="134" height="44"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aoQ-Lr-7k9">
+                                            <rect key="frame" x="244" y="40" width="150" height="44"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="GS4-Zw-NQv" customClass="PriorityControl" customModule="Gift_Log" customModuleProvider="target">
-                                            <rect key="frame" x="98" y="40" width="154" height="44"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="GS4-Zw-NQv" customClass="PriorityControl" customModule="Gift_Log" customModuleProvider="target">
+                                            <rect key="frame" x="98" y="40" width="138" height="44"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="exclamationPointCount">
                                                     <integer key="value" value="3"/>
@@ -59,13 +58,27 @@
                                             </userDefinedRuntimeAttributes>
                                         </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="GS4-Zw-NQv" firstAttribute="top" secondItem="hy6-qf-HOh" secondAttribute="bottom" constant="8" symbolic="YES" id="7Fx-iY-e2a"/>
+                                        <constraint firstItem="hy6-qf-HOh" firstAttribute="top" secondItem="Cdj-Dr-L8l" secondAttribute="topMargin" id="BJm-dI-xZQ"/>
+                                        <constraint firstItem="kGo-D7-1hh" firstAttribute="centerY" secondItem="Cdj-Dr-L8l" secondAttribute="centerY" id="GHR-bM-IfE"/>
+                                        <constraint firstItem="hy6-qf-HOh" firstAttribute="leading" secondItem="GS4-Zw-NQv" secondAttribute="leading" id="GT1-1J-lGC"/>
+                                        <constraint firstItem="hy6-qf-HOh" firstAttribute="leading" secondItem="kGo-D7-1hh" secondAttribute="trailing" constant="8" symbolic="YES" id="LGe-dw-Unw"/>
+                                        <constraint firstItem="aoQ-Lr-7k9" firstAttribute="leading" secondItem="GS4-Zw-NQv" secondAttribute="trailing" constant="8" symbolic="YES" id="NLN-xD-hvx"/>
+                                        <constraint firstItem="kGo-D7-1hh" firstAttribute="top" secondItem="Cdj-Dr-L8l" secondAttribute="top" id="QY5-RE-ddH"/>
+                                        <constraint firstItem="GS4-Zw-NQv" firstAttribute="top" secondItem="aoQ-Lr-7k9" secondAttribute="top" id="Scw-7B-wrF"/>
+                                        <constraint firstItem="kGo-D7-1hh" firstAttribute="leading" secondItem="Cdj-Dr-L8l" secondAttribute="leading" id="VNX-72-LQw"/>
+                                        <constraint firstAttribute="trailing" secondItem="hy6-qf-HOh" secondAttribute="trailing" id="Ze3-Y1-jVi"/>
+                                        <constraint firstItem="GS4-Zw-NQv" firstAttribute="bottom" secondItem="aoQ-Lr-7k9" secondAttribute="bottom" id="vob-H5-7ac"/>
+                                        <constraint firstItem="aoQ-Lr-7k9" firstAttribute="trailing" secondItem="Cdj-Dr-L8l" secondAttribute="trailingMargin" id="yGa-vE-m0f"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="giftImageView" destination="kGo-D7-1hh" id="Lar-ET-EYv"/>
-                                    <outlet property="imageView" destination="kGo-D7-1hh" id="YgW-VS-lvn"/>
                                     <outlet property="nameLabel" destination="hy6-qf-HOh" id="gPR-TN-1kh"/>
                                     <outlet property="priceLabel" destination="aoQ-Lr-7k9" id="GfV-WR-0zi"/>
                                     <outlet property="priorityControl" destination="GS4-Zw-NQv" id="gMD-em-02y"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="eqc-Wj-cWd"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -296,7 +309,7 @@
                     <connections>
                         <outlet property="addressField" destination="LYA-Gb-ifx" id="jav-nv-wn4"/>
                         <outlet property="addressLabel" destination="7MP-Dv-AQW" id="CDM-tv-vaO"/>
-                        <outlet property="cancelButton" destination="3fp-5o-8Dl" id="ITm-Ib-8qE"/>
+                        <outlet property="cancelButton" destination="3fp-5o-8Dl" id="2A5-0c-DT8"/>
                         <outlet property="cityStateField" destination="w8Z-bZ-ftW" id="WZD-20-vum"/>
                         <outlet property="cityStateLabel" destination="KZf-OW-ay0" id="bMz-qS-iP1"/>
                         <outlet property="dateField" destination="AYe-I7-AzQ" id="oav-MR-2rW"/>
@@ -373,11 +386,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yca-M1-Mlw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="950.72463768115949" y="25.446428571428569"/>
+            <point key="canvasLocation" x="891" y="412"/>
         </scene>
     </scenes>
     <resources>
         <image name="defaultImage" width="110" height="100"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="eqc-Wj-cWd"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

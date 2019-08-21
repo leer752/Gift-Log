@@ -7,16 +7,23 @@
 //
 
 import UIKit
+import os.log
 
 class GiftTableViewController: UITableViewController {
     
     // MARK: Properties
     
     var gifts = [Gift] ()
-
+    
+    var transparentView = UIView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Use the edit button item provided by the table view controller.
+        navigationItem.leftBarButtonItem = editButtonItem
+        
+        // Load the sample gift data.
         loadSampleGifts()
     }
 
@@ -52,25 +59,26 @@ class GiftTableViewController: UITableViewController {
     }
     
 
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
+    
 
-    /*
+    
     // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            gifts.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.
@@ -87,24 +95,54 @@ class GiftTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        
+        switch(segue.identifier ?? "") {
+            
+        case "AddGift":
+            os_log("Adding a new gift.", log: OSLog.default, type: .debug)
+            
+        case "ShowDetail":
+            guard let giftDetailViewController = segue.destination as? GiftViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            guard let selectedGiftCell = sender as? GiftTableViewCell else {
+                fatalError("Unexpected sender: \(String(describing: sender))")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedGiftCell) else {
+                fatalError("The selected cell is not being displayed by the table.")
+            }
+            
+            let selectedGift = gifts[indexPath.row]
+            giftDetailViewController.gift = selectedGift
+            
+        default:
+            fatalError("Unexpected Segue Identifier: \(String(describing: segue.identifier))")
+        }
     }
-    */
+    
     
     // MARK: Actions
-    
     @IBAction func unwindToGiftList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? GiftViewController, let gift = sourceViewController.gift {
-            // Add a new gift.
-            let newIndexPath = IndexPath(row: gifts.count, section: 0)
-            gifts.append(gift)
-            tableView.insertRows(at: [newIndexPath], with: .automatic)
+            
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                // Update an existing gift.
+                gifts[selectedIndexPath.row] = gift
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+            } else {
+                // Add a new gift.
+                let newIndexPath = IndexPath(row: gifts.count, section: 0)
+                gifts.append(gift)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
         }
     }
 

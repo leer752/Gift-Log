@@ -36,6 +36,7 @@ class GiftViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     @IBOutlet weak var priorityLabel: UILabel!
     @IBOutlet weak var priorityControl: PriorityControl!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
     
     /*
      This value is either passed by 'GiftTableViewController' in
@@ -71,7 +72,20 @@ class GiftViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     
     // MARK: Navigation
     @IBAction func cancel(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+        // The view controller needs to be dismissed in two different ways depending on how it's presented (push or modal).
+        let isPresentingInAddGiftMode = presentingViewController is UINavigationController
+        
+        if isPresentingInAddGiftMode {
+            dismiss(animated: true, completion: nil)
+        }
+            
+        else if let owningNavigationController = navigationController {
+            owningNavigationController.popViewController(animated: true)
+        }
+            
+        else {
+            fatalError("The GiftViewController is not inside a navigation controller.")
+        }
     }
     
     // This method lets you configure a view controller before it's presented.
@@ -144,8 +158,8 @@ class GiftViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
+        // Handle all text fields' user input through delegate callbacks.
         nameField.delegate = self
         storeField.delegate = self
         addressField.delegate = self
@@ -155,6 +169,22 @@ class GiftViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         dateField.delegate = self
         itemCodeField.delegate = self
         
+        // Set up detail if editing an existing gift.
+        if let gift = gift {
+            navigationItem.title = gift.name
+            giftImageView.image = gift.photo
+            nameField.text = gift.name
+            storeField.text = gift.store
+            addressField.text = gift.address
+            cityStateField.text = gift.cityState
+            urlField.text = gift.url
+            priceField.text = gift.price
+            dateField.text = gift.date
+            itemCodeField.text = gift.itemCode
+            priorityControl.priority = gift.priority
+        }
+        
+        // Enable the save button if all required fields are entered. If some not entered, highlight required field titles in red.
         updateSaveButtonState()
         showRequiredFields()
     }
