@@ -17,14 +17,14 @@ class Gift {
     var address: String?
     var cityState: String?
     var url: String?
-    var price: Float
+    var price: String
     var date: String?
     var itemCode: String?
     var priority: Int
     
     // MARK: Initialization
     
-    init?(photo: UIImage?, name: String, store: String, address: String?, cityState: String?, url: String?, price: Float, date: String?, itemCode: String?, priority: Int) {
+    init?(photo: UIImage?, name: String, store: String, address: String?, cityState: String?, url: String?, price: String, date: String?, itemCode: String?, priority: Int) {
         
         guard !name.isEmpty else {
             return nil
@@ -38,7 +38,7 @@ class Gift {
             return nil
         }
         
-        guard (price >= 0) else {
+        guard price.isNumeric && (price.floatValue >= 0) else {
             return nil
         }
         
