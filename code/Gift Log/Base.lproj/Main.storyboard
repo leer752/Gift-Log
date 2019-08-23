@@ -390,6 +390,7 @@
                                 <connections>
                                     <outlet property="contactNameLabel" destination="MT0-MH-R1l" id="j6t-yW-Rzw"/>
                                     <outlet property="giftTotalLabel" destination="2ok-jv-qHr" id="qU9-ob-8Ao"/>
+                                    <segue destination="r5Y-J7-A65" kind="show" identifier="ContactShowDetail" id="8jp-wF-dcL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -428,7 +429,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vL9-XK-YJJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2.8985507246376816" y="21.428571428571427"/>
+            <point key="canvasLocation" x="-141" y="404"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nKY-SV-jOP">
@@ -479,7 +480,8 @@
         <image name="defaultImage" width="110" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eqc-Wj-cWd"/>
+        <segue reference="bRH-co-dcf"/>
+        <segue reference="ZWa-dC-KqH"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
