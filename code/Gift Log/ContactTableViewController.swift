@@ -28,14 +28,15 @@ class ContactTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Load sample data for contacts.
-        loadSampleContacts()
-        sortContacts()
-        
-        /*
-         Used to call function that imports contacts.
+        // Try to import contacts; if none, load sample data for contacts.
         fetchContacts()
-        */
+        
+        if contacts.isEmpty {
+            loadSampleContacts()
+        }
+        
+        // Sort contacts into the correct letter key in the names dictionary.
+        sortContacts()
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -105,22 +106,52 @@ class ContactTableViewController: UITableViewController {
         
         // Configure the cell.
         cell.contactNameLabel.text = contact.contactName
-        cell.giftTotalLabel.text = "0"
+        cell.giftTotalLabel.text = "1"
         
         return cell
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        
+        switch(segue.identifier ?? "") {
+            
+        case "ContactShowDetail":
+            guard let giftListViewController = segue.destination as? GiftTableViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            guard let selectedContactCell = sender as? ContactTableViewCell else {
+                fatalError("Unexpected sender: \(String(describing: sender))")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedContactCell) else {
+                fatalError("The selected cell is not being displayed by the table.")
+            }
+            
+            guard let sectionLetter = letterNumberIndex[indexPath.section] else {
+                fatalError("Failed to instantiate sectionLetter")
+            }
+            guard let activeSection = names[sectionLetter] else {
+                fatalError("Failed to instantiate activeSection")
+            }
+            
+            let selectedContact = activeSection[indexPath.row]
+            
+            giftListViewController.contact = selectedContact
+            
+        default:
+            fatalError("Unexpected Segue Identifier: \(String(describing: segue.identifier))")
+        }
     }
-    */
+
     
-    /* Drafted function meant to import contacts.
+    
+    // Drafted function meant to import contacts.
     
     private func fetchContacts() {
         print("Attempting to fetch contacts.")
@@ -142,8 +173,17 @@ class ContactTableViewController: UITableViewController {
                 do {
                     try store.enumerateContacts(with: request, usingBlock: { (importedContact, stopPointerIfYouWantToStopEnumerating) in
                         
-                        let contact = Contact(contactName: importedContact.givenName + " " + importedContact.familyName, uniqueID: importedContact.identifier)
-                        contacts.append(contact)
+                        if importedContact.familyName.isEmpty {
+                            guard let contact = Contact(contactName: importedContact.givenName, lastName: importedContact.givenName, uniqueID: importedContact.identifier) else {
+                                fatalError("Failed to initialize imported contact details.")
+                            }
+                            self.contacts.append(contact)
+                        } else {
+                            guard let contact = Contact(contactName: importedContact.givenName + " " + importedContact.familyName, lastName: importedContact.familyName, uniqueID: importedContact.identifier) else {
+                                fatalError("Failed to initialize imported contact details.")
+                            }
+                            self.contacts.append(contact)
+                        }
                         
                     })
                     
@@ -158,7 +198,6 @@ class ContactTableViewController: UITableViewController {
         }
     }
     
-    */
     
     // MARK: Private methods.
     

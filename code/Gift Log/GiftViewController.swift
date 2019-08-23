@@ -44,6 +44,7 @@ class GiftViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
      or constructed as part of adding a new gift.
     */
     var gift: Gift?
+    var activeID: String?
     
     // MARK: UIImagePickerControllerDelegate
     
@@ -110,7 +111,7 @@ class GiftViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         let priority = priorityControl.priority
         
         // Set the gift to be passed to GiftTableViewController after the unwind segue.
-        gift = Gift(photo: photo, name: name, store: store, address: address, cityState: cityState, url: url, price: price, date: date, itemCode: itemCode, priority: priority)
+        gift = Gift(photo: photo, name: name, store: store, address: address, cityState: cityState, url: url, price: price, date: date, itemCode: itemCode, priority: priority, contactID: activeID ?? "unknown")
         
     }
     
