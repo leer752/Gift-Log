@@ -22,6 +22,8 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSContactsUsageDescription</key>
+	<string>Allows you to assign gifts to existing contacts.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Allows you to add a photo to your gift.</string>
 	<key>UILaunchStoryboardName</key>
