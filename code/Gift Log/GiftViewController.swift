@@ -206,21 +206,21 @@ class GiftViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         if(nameText.isEmpty) {
             nameLabel.textColor = UIColor.red
         } else {
-            nameLabel.textColor = UIColor.darkGray
+            nameLabel.textColor = UIColor.black
         }
         
         let storeText = storeField.text ?? ""
         if(storeText.isEmpty) {
             storeLabel.textColor = UIColor.red
         } else {
-            storeLabel.textColor = UIColor.darkGray
+            storeLabel.textColor = UIColor.black
         }
         
         let priceText = priceField.text ?? ""
         if(priceText.isEmpty) {
             priceLabel.textColor = UIColor.red
         } else {
-            priceLabel.textColor = UIColor.darkGray
+            priceLabel.textColor = UIColor.black
         }
     }
     

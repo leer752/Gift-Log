@@ -18,6 +18,9 @@
 		137B58E8230726CC00E9A785 /* Gift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137B58E7230726CC00E9A785 /* Gift.swift */; };
 		137B58EA2307400E00E9A785 /* GiftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137B58E92307400E00E9A785 /* GiftTableViewCell.swift */; };
 		137B58EC230745FE00E9A785 /* GiftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137B58EB230745FE00E9A785 /* GiftTableViewController.swift */; };
+		13A71F96230DEA8900277B98 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A71F95230DEA8900277B98 /* Contact.swift */; };
+		13A71F98230DEC3D00277B98 /* ContactTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A71F97230DEC3D00277B98 /* ContactTableViewController.swift */; };
+		13A71F9A230DF05F00277B98 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A71F99230DF05F00277B98 /* ContactTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,9 @@
 		137B58E7230726CC00E9A785 /* Gift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gift.swift; sourceTree = "<group>"; };
 		137B58E92307400E00E9A785 /* GiftTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftTableViewCell.swift; sourceTree = "<group>"; };
 		137B58EB230745FE00E9A785 /* GiftTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftTableViewController.swift; sourceTree = "<group>"; };
+		13A71F95230DEA8900277B98 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		13A71F97230DEC3D00277B98 /* ContactTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewController.swift; sourceTree = "<group>"; };
+		13A71F99230DF05F00277B98 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,10 +96,13 @@
 				132EE4832305CBE200269B06 /* AppDelegate.swift */,
 				1377B5F5230B413F00622F83 /* extensions.swift */,
 				132EE4852305CBE200269B06 /* GiftViewController.swift */,
+				137B58EB230745FE00E9A785 /* GiftTableViewController.swift */,
 				137B58E92307400E00E9A785 /* GiftTableViewCell.swift */,
+				13A71F97230DEC3D00277B98 /* ContactTableViewController.swift */,
+				13A71F99230DF05F00277B98 /* ContactTableViewCell.swift */,
 				132EE4A32305E47600269B06 /* PriorityControl.swift */,
 				137B58E7230726CC00E9A785 /* Gift.swift */,
-				137B58EB230745FE00E9A785 /* GiftTableViewController.swift */,
+				13A71F95230DEA8900277B98 /* Contact.swift */,
 				132EE4872305CBE200269B06 /* Main.storyboard */,
 				132EE48A2305CBE700269B06 /* Assets.xcassets */,
 				132EE48C2305CBE700269B06 /* LaunchScreen.storyboard */,
@@ -216,6 +225,9 @@
 				132EE4842305CBE200269B06 /* AppDelegate.swift in Sources */,
 				137B58EA2307400E00E9A785 /* GiftTableViewCell.swift in Sources */,
 				1377B5F6230B413F00622F83 /* extensions.swift in Sources */,
+				13A71F96230DEA8900277B98 /* Contact.swift in Sources */,
+				13A71F98230DEC3D00277B98 /* ContactTableViewController.swift in Sources */,
+				13A71F9A230DF05F00277B98 /* ContactTableViewCell.swift in Sources */,
 				137B58EC230745FE00E9A785 /* GiftTableViewController.swift in Sources */,
 				132EE4A42305E47600269B06 /* PriorityControl.swift in Sources */,
 				137B58E8230726CC00E9A785 /* Gift.swift in Sources */,
@@ -383,12 +395,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XA9744N9UM;
 				INFOPLIST_FILE = "Gift Log/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.leer.Gift-Log";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_ENABLE_BATCH_MODE = NO;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -401,12 +416,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XA9744N9UM;
 				INFOPLIST_FILE = "Gift Log/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.leer.Gift-Log";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_ENABLE_BATCH_MODE = NO;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
