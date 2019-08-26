@@ -374,9 +374,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search contact names..." showsCancelButton="YES" id="dFu-bt-AFs">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactTableViewCell" rowHeight="40" id="bkK-Si-hXl" customClass="ContactTableViewCell" customModule="Gift_Log" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="40"/>
+                                <rect key="frame" x="0.0" y="72" width="414" height="40"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bkK-Si-hXl" id="TpH-Ex-l6d">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="39.5"/>
@@ -425,6 +432,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Contacts" id="HVH-M0-XvZ"/>
+                    <connections>
+                        <outlet property="searchBar" destination="dFu-bt-AFs" id="xSl-B4-WRm"/>
+                        <outlet property="tableView" destination="zyI-t7-Fdo" id="Pcv-Ph-2qK"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qFO-I6-4IZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -479,7 +490,7 @@
         <image name="defaultImage" width="110" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bRH-co-dcf"/>
+        <segue reference="eqc-Wj-cWd"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
