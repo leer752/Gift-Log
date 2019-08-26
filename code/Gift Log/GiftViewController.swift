@@ -37,6 +37,8 @@ class GiftViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     @IBOutlet weak var priorityControl: PriorityControl!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var contentView: UIView!
     
     /*
      This value is either passed by 'GiftTableViewController' in
@@ -115,6 +117,46 @@ class GiftViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         
     }
     
+    // Handling keyboard for bottom text fields.
+    
+    func registerForKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(onKeyboardAppear(_:)), name: UIResponder.keyboardDidShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(onKeyboardDisappear(_:)), name: UIResponder.keyboardDidHideNotification, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardDidShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardDidHideNotification, object: nil)
+    }
+    
+    @objc func onKeyboardAppear(_ notification: NSNotification) {
+        let info = notification.userInfo!
+        let rect: CGRect = info[UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
+        let keyboardSize = rect.size
+        
+        let insets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
+        scrollView.contentInset = insets
+        scrollView.scrollIndicatorInsets = insets
+        
+        // If active text fields is hidden by the keyboard, scroll so it's visible.
+        var activeRect = self.view.frame;
+        activeRect.size.height -= keyboardSize.height;
+        
+        let activeField: UITextField? = [nameField, storeField, addressField, cityStateField, urlField, priceField, dateField, itemCodeField].first { $0.isFirstResponder }
+        if let activeField = activeField {
+            if activeRect.contains(activeField.frame.origin) {
+                let scrollPoint = CGPoint(x: 0, y: activeField.frame.origin.y-keyboardSize.height)
+                scrollView.setContentOffset(scrollPoint, animated: true)
+            }
+        }
+        
+    }
+    
+    @objc func onKeyboardDisappear(_ notification: NSNotification) {
+        scrollView.contentInset = UIEdgeInsets.zero
+        scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
+    }
+    
     
     // MARK: Actions
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
@@ -157,8 +199,16 @@ class GiftViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         return true
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        registerForKeyboardNotifications()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Set content size of scroll view so scrolling is enabled.
+        scrollView.contentSize = contentView.frame.size
         
         // Handle all text fields' user input through delegate callbacks.
         nameField.delegate = self
