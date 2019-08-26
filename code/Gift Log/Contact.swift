@@ -15,6 +15,7 @@ class Contact: NSObject, NSCoding {
     var contactName: String
     var lastName: String
     var uniqueID: String
+    var giftCount: Int
     
     // MARK: Archiving Paths
     
@@ -27,11 +28,12 @@ class Contact: NSObject, NSCoding {
         static let contactName = "contactName"
         static let lastName = "lastName"
         static let uniqueID = "uniqueID"
+        static let giftCount = "giftCount"
     }
     
     // MARK: Initialization
     
-    init?(contactName: String, lastName: String, uniqueID: String) {
+    init?(contactName: String, lastName: String, uniqueID: String, giftCount: Int) {
         guard !contactName.isEmpty else {
             return nil
         }
@@ -40,9 +42,14 @@ class Contact: NSObject, NSCoding {
             return nil
         }
         
+        guard giftCount >= 0 else {
+            return nil
+        }
+        
         self.contactName = contactName
         self.lastName = lastName
         self.uniqueID = uniqueID
+        self.giftCount = giftCount
         
     }
     
@@ -52,6 +59,7 @@ class Contact: NSObject, NSCoding {
         aCoder.encode(contactName, forKey: ContactKey.contactName)
         aCoder.encode(lastName, forKey: ContactKey.lastName)
         aCoder.encode(uniqueID, forKey: ContactKey.uniqueID)
+        aCoder.encode(giftCount, forKey: ContactKey.uniqueID)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -69,8 +77,10 @@ class Contact: NSObject, NSCoding {
             return nil
         }
         
+        let giftCount = aDecoder.decodeInteger(forKey: ContactKey.giftCount)
+        
         // Call designated initializer.
-        self.init(contactName: contactName, lastName: lastName, uniqueID: uniqueID)
+        self.init(contactName: contactName, lastName: lastName, uniqueID: uniqueID, giftCount: giftCount)
     }
     
 }

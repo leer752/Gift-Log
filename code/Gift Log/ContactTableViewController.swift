@@ -8,6 +8,7 @@
 
 import UIKit
 import Contacts
+import os.log
 
 class ContactTableViewController: UITableViewController {
     
@@ -37,6 +38,9 @@ class ContactTableViewController: UITableViewController {
         
         // Sort contacts into the correct letter key in the names dictionary.
         sortContacts()
+        
+        // Assign gift count to contact.
+        countGifts()
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -106,7 +110,11 @@ class ContactTableViewController: UITableViewController {
         
         // Configure the cell.
         cell.contactNameLabel.text = contact.contactName
-        cell.giftTotalLabel.text = "1"
+        if contact.giftCount <= 0 {
+            cell.giftTotalLabel.text = nil
+        } else {
+            cell.giftTotalLabel.text = "\(contact.giftCount)"
+        }
         
         return cell
     }
@@ -174,12 +182,12 @@ class ContactTableViewController: UITableViewController {
                     try store.enumerateContacts(with: request, usingBlock: { (importedContact, stopPointerIfYouWantToStopEnumerating) in
                         
                         if importedContact.familyName.isEmpty {
-                            guard let contact = Contact(contactName: importedContact.givenName, lastName: importedContact.givenName, uniqueID: importedContact.identifier) else {
+                            guard let contact = Contact(contactName: importedContact.givenName, lastName: importedContact.givenName, uniqueID: importedContact.identifier, giftCount: 0) else {
                                 fatalError("Failed to initialize imported contact details.")
                             }
                             self.contacts.append(contact)
                         } else {
-                            guard let contact = Contact(contactName: importedContact.givenName + " " + importedContact.familyName, lastName: importedContact.familyName, uniqueID: importedContact.identifier) else {
+                            guard let contact = Contact(contactName: importedContact.givenName + " " + importedContact.familyName, lastName: importedContact.familyName, uniqueID: importedContact.identifier, giftCount: 0) else {
                                 fatalError("Failed to initialize imported contact details.")
                             }
                             self.contacts.append(contact)
@@ -203,15 +211,15 @@ class ContactTableViewController: UITableViewController {
     
     private func loadSampleContacts() {
         
-        guard let contact1 = Contact(contactName: "Johnny Appleseed", lastName: "Appleseed", uniqueID: "JA44392") else {
+        guard let contact1 = Contact(contactName: "Johnny Appleseed", lastName: "Appleseed", uniqueID: "JA44392", giftCount: 1) else {
             fatalError("Unable to instantiate contact1")
         }
         
-        guard let contact2 = Contact(contactName: "Holly Hopeful", lastName: "Hopeful", uniqueID: "HH385893") else {
+        guard let contact2 = Contact(contactName: "Holly Hopeful", lastName: "Hopeful", uniqueID: "HH385893", giftCount: 1) else {
             fatalError("Unable to instantiate contact2")
         }
         
-        guard let contact3 = Contact(contactName: "Debbie Downer", lastName: "Downer", uniqueID: "DD389") else {
+        guard let contact3 = Contact(contactName: "Debbie Downer", lastName: "Downer", uniqueID: "DD389", giftCount: 1) else {
             fatalError("Unable to instantiate contact3")
         }
         
@@ -224,6 +232,32 @@ class ContactTableViewController: UITableViewController {
                 if key.prefix(1) == entry.lastName.prefix(1) {
                     names[key, default: []].append(entry)
                 }
+            }
+        }
+    }
+    
+    private func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+    
+    private func countGifts() {
+        let fullPath = getDocumentsDirectory().appendingPathComponent("gifts")
+        if let nsData = NSData(contentsOf: fullPath) {
+            do {
+                let data = Data(referencing: nsData)
+                if let loadedGifts = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? Array<Gift> {
+                    for gift in loadedGifts {
+                        for entry in contacts {
+                            if gift.contactID == entry.uniqueID {
+                                entry.giftCount += 1
+                            }
+                        }
+                    }
+
+                }
+            } catch {
+                os_log("Couldn't read file.", log: OSLog.default, type: .debug)
             }
         }
     }
