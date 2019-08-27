@@ -11,20 +11,20 @@ import UIKit
 class GiftTableViewCell: UITableViewCell {
     
     // MARK: Properties
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priorityControl: PriorityControl!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var giftImageView: UIImageView!
     
+    // Initialization.
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
+    // View configuration for the selected state.
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }
