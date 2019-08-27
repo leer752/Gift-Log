@@ -2,6 +2,11 @@
 //  GiftTableViewController.swift
 //  Gift Log
 //
+//  Description: View controller for the gift table list screen. Actions taken from this screen:
+//                  - Deleting specific gifts.
+//                  - Navigating to existing gift for edits.
+//                  - Navigating to new gift screen to add a gift.
+//
 //  Created by Lee Rhodes on 8/16/19.
 //  Copyright © 2019 Lee Rhodes. All rights reserved.
 //
@@ -35,27 +40,28 @@ class GiftTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
+    // Returns 1 section as gifts do not need to be sorted into different sections.
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
+    // Returns the number of rows in the section. This is equal to the number of registered gifts for the specified contact.
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return gifts.count
     }
 
-    
+    // Configures cell layout.
+    // Table view cells are reused and should be dequeued using a cell identifier.
+    // Fetches the appropriate gift for the data source layout and configures the cell.
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        // Table view cells are reused and should be dequeued using a cell identifier.
         let cellIdentifier = "GiftTableViewCell"
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? GiftTableViewCell else {
             fatalError("The dequeued cell is not an instance of GiftTableViewCell.")
         }
         
-        // Fetches the appropriate gift for the data source layout.
         let gift = gifts[indexPath.row]
         
-        // Configure the cell.
         cell.nameLabel.text = gift.name
         cell.giftImageView.image = gift.photo
         cell.priorityControl.priority = gift.priority
@@ -67,26 +73,26 @@ class GiftTableViewController: UITableViewController {
 
     // Support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
         return true
     }
 
     
     // Support editing the table view.
+    // Allows use to slide cell to the left in order to delete it from the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
             gifts.remove(at: indexPath.row)
             saveGifts()
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+            // Insert style is not used and is therefore empty.
         }    
     }
     
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // Preparing view controller before navigation commences.
+    // Different actions will take place depending on if the user is editing an existing gift or adding a new one.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
@@ -127,27 +133,27 @@ class GiftTableViewController: UITableViewController {
     
     
     // MARK: Actions
+    
+    // Updates the table view display after a gift is edited or added.
+    // Reloads table view display and saves gift changes to database.
     @IBAction func unwindToGiftList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? GiftViewController, let gift = sourceViewController.gift {
-            
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
-                // Update an existing gift.
                 gifts[selectedIndexPath.row] = gift
                 tableView.reloadRows(at: [selectedIndexPath], with: .none)
             } else {
-                // Add a new gift.
                 let newIndexPath = IndexPath(row: gifts.count, section: 0)
                 gifts.append(gift)
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
             
-            // Save the gifts.
             saveGifts()
         }
     }
 
     // MARK: Private methods
     
+    // Load sample gift data if no gifts were found.
     private func loadSampleGifts() {
         let photo1 = UIImage(named: "gift1")
         let photo2 = UIImage(named: "gift2")
@@ -178,9 +184,10 @@ class GiftTableViewController: UITableViewController {
         if gift3.contactID == activeID {
             gifts.append(gift3)
         }
-        
     }
     
+    // Update gift database after a gift is edited, added, or deleted.
+    // Also sets up data to persist even when app is re-opened.
     private func saveGifts() {
         let fullPath = getDocumentsDirectory().appendingPathComponent("gifts")
         
@@ -193,11 +200,13 @@ class GiftTableViewController: UITableViewController {
         }
     }
     
+    // Get path to the documents directory that the application uses on the phone.
     private func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
     }
     
+    // Load gifts found in the documents directory on the phone; does not occur if no gifts found.
     private func loadGifts() -> [Gift]? {
         let fullPath = getDocumentsDirectory().appendingPathComponent("gifts")
         if let nsData = NSData(contentsOf: fullPath) {
