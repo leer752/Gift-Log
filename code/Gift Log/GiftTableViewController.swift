@@ -3,6 +3,7 @@
 //  Gift Log
 //
 //  Description: View controller for the gift table list screen. Actions taken from this screen:
+//                  - Load existing gifts.
 //                  - Deleting specific gifts.
 //                  - Navigating to existing gift for edits.
 //                  - Navigating to new gift screen to add a gift.
@@ -20,14 +21,18 @@ class GiftTableViewController: UITableViewController {
     
     var gifts = [Gift]()
     var filteredGifts = [Gift]()
+    var allGifts = [Gift]()
+    var giftsWithRemoval = [Gift]()
     
     // Passed by previous view controller.
     var contact: Contact?
 
+    // Actions to take when view successfully loads:
+    //  - Load any saved gifts.
+    //  - If no saved gifts, load sample data.
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Load any saved gifts, otherwise load sample data.
         let savedGifts = loadGifts()
         
         if savedGifts?.count ?? 0 > 0 {
@@ -35,7 +40,7 @@ class GiftTableViewController: UITableViewController {
         } else {
             loadSampleGifts()
         }
-        
+    
     }
 
     // MARK: - Table view data source
@@ -45,7 +50,8 @@ class GiftTableViewController: UITableViewController {
         return 1
     }
 
-    // Returns the number of rows in the section. This is equal to the number of registered gifts for the specified contact.
+    // Returns the number of rows in the section.
+    // This is equal to the number of registered gifts for the specified contact.
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return gifts.count
     }
@@ -81,7 +87,10 @@ class GiftTableViewController: UITableViewController {
     // Allows use to slide cell to the left in order to delete it from the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            let deletedGift = gifts[indexPath.row]
             gifts.remove(at: indexPath.row)
+            giftsWithRemoval = allGifts.filter { $0 != deletedGift }
+            allGifts = giftsWithRemoval
             saveGifts()
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
@@ -144,6 +153,7 @@ class GiftTableViewController: UITableViewController {
             } else {
                 let newIndexPath = IndexPath(row: gifts.count, section: 0)
                 gifts.append(gift)
+                allGifts.append(gift)
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
             
@@ -192,7 +202,7 @@ class GiftTableViewController: UITableViewController {
         let fullPath = getDocumentsDirectory().appendingPathComponent("gifts")
         
         do {
-            let data = try NSKeyedArchiver.archivedData(withRootObject: gifts, requiringSecureCoding: false)
+            let data = try NSKeyedArchiver.archivedData(withRootObject: allGifts, requiringSecureCoding: false)
             try data.write(to: fullPath)
             os_log("Gifts successfully saved.", log: OSLog.default, type: .debug)
         } catch {
@@ -208,12 +218,15 @@ class GiftTableViewController: UITableViewController {
     
     // Load gifts found in the documents directory on the phone; does not occur if no gifts found.
     private func loadGifts() -> [Gift]? {
+        filteredGifts.removeAll()
+        allGifts.removeAll()
         let fullPath = getDocumentsDirectory().appendingPathComponent("gifts")
         if let nsData = NSData(contentsOf: fullPath) {
             do {
                 let data = Data(referencing: nsData)
                 if let loadedGifts = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? Array<Gift> {
                     for gift in loadedGifts {
+                        allGifts.append(gift)
                         guard let activeID = contact?.uniqueID else {
                             fatalError("Unable to instantiate activeID")
                         }

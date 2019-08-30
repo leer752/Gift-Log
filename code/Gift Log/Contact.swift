@@ -2,6 +2,10 @@
 //  Contact.swift
 //  Gift Log
 //
+//  Description: A data model for a contact in the application set up as a custom Class.
+//      All data is imported from the user's contact book rather than being created directly through the application.
+//      Note: The uniqueID has a one-to-many relationship with contactID for gifts.
+//
 //  Created by Lee Rhodes on 8/21/19.
 //  Copyright © 2019 Lee Rhodes. All rights reserved.
 //
@@ -9,6 +13,7 @@
 import UIKit
 
 class Contact {
+    
     // MARK: Properties
     
     var contactName: String

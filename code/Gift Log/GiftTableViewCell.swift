@@ -2,6 +2,8 @@
 //  GiftTableViewCell.swift
 //  Gift Log
 //
+//  Description: Associates storyboard layout elements to an outlet for the gift table view cells.
+//
 //  Created by Lee Rhodes on 8/16/19.
 //  Copyright © 2019 Lee Rhodes. All rights reserved.
 //

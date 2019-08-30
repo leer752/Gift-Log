@@ -19,7 +19,6 @@ import UIKit
 //            Takes numeric string value and converts it into a float.
 //            Returns: Float
 //            NOTE: The string must be checked with "isNumeric" first. If it has non-integer characters, this extension will error out.
-
 extension String {
     var isNumeric: Bool {
         guard !self.isEmpty else { return false }
@@ -36,7 +35,6 @@ extension String {
 //        - addDoneCancelToolbar
 //            Inserts a toolbar at the top of the designated keyboard that gives the user a "Done" button.
 //            The button dismisses the keyboard and acts the same as the "Done" buttons for other text fields.
-
 extension UITextField {
     func addDoneToolbar(onDone: (target: Any, action: Selector)? = nil) {
         let onDone = onDone ?? (target: self, action: #selector(doneButtonTapped))
@@ -52,8 +50,6 @@ extension UITextField {
     }
     
     // Default action for addDoneToolbar:
-    
     @objc func doneButtonTapped() { self.resignFirstResponder() }
 
 }
-

@@ -2,6 +2,8 @@
 //  Gift_LogTests.swift
 //  Gift LogTests
 //
+//  Description: Automated unit tests for the Gift and Contact classes.
+//
 //  Created by Lee Rhodes on 8/15/19.
 //  Copyright © 2019 Lee Rhodes. All rights reserved.
 //
@@ -38,15 +40,15 @@ class Gift_LogTests: XCTestCase {
     // Contact Class Tests
     
     func testContactInitializationSucceeds() {
-        let idContact = Contact.init(contactName: "Johnny Dogood", lastName: "Dogood", uniqueID: "JD389583")
+        let idContact = Contact.init(contactName: "Johnny Dogood", lastName: "Dogood", uniqueID: "JD389583", giftCount: 0)
         XCTAssertNotNil(idContact)
     }
     
     func testContactInitializationFails() {
-        let noNameContact = Contact.init(contactName: "", lastName: "", uniqueID: "4738")
+        let noNameContact = Contact.init(contactName: "", lastName: "", uniqueID: "4738", giftCount: 1)
         XCTAssertNil(noNameContact)
         
-        let noIDContact = Contact.init(contactName: "Sally Supper", lastName: "Supper", uniqueID: "")
+        let noIDContact = Contact.init(contactName: "Sally Supper", lastName: "Supper", uniqueID: "", giftCount: 2)
         XCTAssertNil(noIDContact)
     }
     

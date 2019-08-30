@@ -2,6 +2,11 @@
 //  Gift.swift
 //  Gift Log
 //
+//  Description: A data model for a gift in the application set up as a custom Class.
+//      Required user-inputted data: name, store, & price.
+//      Non-required user-inputted data: photo, address, cityState, url, date, itemCode, priority.
+//      The contactID variable is not user-inputted but is passed internally by the application.
+//
 //  Created by Lee Rhodes on 8/16/19.
 //  Copyright © 2019 Lee Rhodes. All rights reserved.
 //
@@ -9,7 +14,8 @@
 import UIKit
 import os.log
 
-class Gift: NSObject, NSCoding {
+class Gift: NSObject {
+    
     // MARK: Properties
     
     var photo: UIImage?
@@ -84,20 +90,6 @@ class Gift: NSObject, NSCoding {
     
     // MARK: NSCoding
     
-    func encode(with aCoder: NSCoder) {
-        aCoder.encode(photo, forKey: GiftKey.photo)
-        aCoder.encode(name, forKey: GiftKey.name)
-        aCoder.encode(store, forKey: GiftKey.store)
-        aCoder.encode(address, forKey: GiftKey.address)
-        aCoder.encode(cityState, forKey: GiftKey.cityState)
-        aCoder.encode(url, forKey: GiftKey.url)
-        aCoder.encode(price, forKey: GiftKey.price)
-        aCoder.encode(date, forKey: GiftKey.date)
-        aCoder.encode(itemCode, forKey: GiftKey.itemCode)
-        aCoder.encode(priority, forKey: GiftKey.priority)
-        aCoder.encode(contactID, forKey: GiftKey.contactID)
-    }
-    
     required convenience init?(coder aDecoder: NSCoder) {
         // Name, store, price, and contactID are required. If these cannot be decoded, the initalizer should fail.
         guard let name = aDecoder.decodeObject(forKey: GiftKey.name) as? String else {
@@ -117,19 +109,32 @@ class Gift: NSObject, NSCoding {
             return nil
         }
         
-        // All other properties are optional so conditional cast can be used.
         let photo = aDecoder.decodeObject(forKey: GiftKey.photo) as? UIImage
         let address = aDecoder.decodeObject(forKey: GiftKey.address) as? String
         let cityState = aDecoder.decodeObject(forKey: GiftKey.cityState) as? String
         let url = aDecoder.decodeObject(forKey: GiftKey.url) as? String
         let date = aDecoder.decodeObject(forKey: GiftKey.date) as? String
         let itemCode = aDecoder.decodeObject(forKey: GiftKey.itemCode) as? String
-        
-        // Priority is an Int so it doesn't need to be downcast.
         let priority = aDecoder.decodeInteger(forKey: GiftKey.priority)
         
-        // Call designated initializer.
         self.init(photo: photo, name: name, store: store, address: address, cityState: cityState, url: url, price: price, date: date, itemCode: itemCode, priority: priority, contactID: contactID)
     }
+}
 
+// Further NSCoding protocol conformance for the Gift class.
+// Necessary for data persistence when saving gifts.
+extension Gift: NSCoding {
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(photo, forKey: GiftKey.photo)
+        aCoder.encode(name, forKey: GiftKey.name)
+        aCoder.encode(store, forKey: GiftKey.store)
+        aCoder.encode(address, forKey: GiftKey.address)
+        aCoder.encode(cityState, forKey: GiftKey.cityState)
+        aCoder.encode(url, forKey: GiftKey.url)
+        aCoder.encode(price, forKey: GiftKey.price)
+        aCoder.encode(date, forKey: GiftKey.date)
+        aCoder.encode(itemCode, forKey: GiftKey.itemCode)
+        aCoder.encode(priority, forKey: GiftKey.priority)
+        aCoder.encode(contactID, forKey: GiftKey.contactID)
+    }
 }
