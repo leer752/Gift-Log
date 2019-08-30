@@ -41,13 +41,13 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aoQ-Lr-7k9">
-                                            <rect key="frame" x="309" y="40" width="85" height="20.5"/>
+                                            <rect key="frame" x="244" y="40" width="150" height="44"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="GS4-Zw-NQv" customClass="PriorityControl" customModule="Gift_Log" customModuleProvider="target">
-                                            <rect key="frame" x="98" y="40" width="203" height="20.5"/>
+                                            <rect key="frame" x="98" y="40" width="138" height="44"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="exclamationPointCount">
                                                     <integer key="value" value="3"/>
@@ -380,6 +380,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search contact names..." showsCancelButton="YES" id="dFu-bt-AFs">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -496,7 +497,7 @@
         <image name="defaultImage" width="110" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eqc-Wj-cWd"/>
+        <segue reference="bRH-co-dcf"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

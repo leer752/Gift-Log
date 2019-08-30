@@ -254,7 +254,6 @@ extension GiftViewController: UIImagePickerControllerDelegate {
 
 // UITextFieldDelegate
 // Handles actions taken for text field editing.
-
 extension GiftViewController: UITextFieldDelegate {
     
     // Disables save buton while editing a text field.
@@ -277,7 +276,6 @@ extension GiftViewController: UITextFieldDelegate {
 
 // UINavigationControllerDelegate
 // Handles configuration before navigation between views is commenced.
-
 extension GiftViewController: UINavigationControllerDelegate {
     // Configures a view controller before it's presented.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
